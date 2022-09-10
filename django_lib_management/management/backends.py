@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import Q
 from .models import *
 
+#To handle Tthe log in functionality as per requirement
 class EmailBackend(ModelBackend):
 	def authenticate(self, request, username=None, password=None, **kwargs):
 		try:
@@ -15,3 +16,4 @@ class EmailBackend(ModelBackend):
 
 		if user.check_password(password) and self.user_can_authenticate(user):
 			return user
+"""Here requirement is to log only with email _id as username and password, from model we check for the email as username"""
