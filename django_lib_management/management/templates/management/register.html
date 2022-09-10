@@ -1,0 +1,16 @@
+<h1>Register</h1>
+
+<form action="{% url 'register' %}" method="post">
+  {% csrf_token %}
+  <h2 class="register-title">REGISTER</h3>
+    <h4>{{form.username.label}}</h4>
+    {{form.username}}
+    <h4>{{form.email.label}}</h4>
+    {{form.email}}
+    <h4>{{form.password1.label}}</h4>
+    {{form.password1}}
+    <h4>{{form.password2.label}}</h4>
+    {{form.password2}}
+    <button type="submit"> Create </button>
+    <p class="message">Already registered? <a href=#>Log In</a></p>
+</form>

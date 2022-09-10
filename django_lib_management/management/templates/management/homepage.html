@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+<style media="screen">
+.btn-circle.btn-xl {
+  width: 73px;
+  height: 73px;
+  padding: 13px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 33px;
+  height: 33px;
+  padding: 6px 3px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+
+.jumbotron{
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.jumbotron h1{
+  text-align: center;
+}
+
+
+</style>
+  </head>
+  <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Navbar</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Features</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Pricing</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link disabled" href="#">Disabled</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+  	<div class="jumbotron" >
+      <h1 class="display-4">Hello {{user.username}} !</h1>
+      <center>Admin Window For You</center>
+      <p class="lead">Admin Panel
+      </p>
+      <hr class="my-4">
+      <centre><p>Option Available For You</p></centre>
+      <div class="options" style="text-align:center">
+        <a href="addbook" class="btn btn-primary btn-lg active" style="border-radius: 3%;" role="button" aria-pressed="true">Add Book To Library</a><br><br>
+        <a href="viewbook" class="btn btn-primary btn-lg active" style="border-radius: 3%;" role="button" aria-pressed="true">View Available Book</a><br><br>
+        <a href="#" class="btn btn-primary btn-lg active" style="border-radius: 3%;" role="button" aria-pressed="true">Issue New Book</a><br><br>
+        <a href="#" class="btn btn-primary btn-lg active" style="border-radius: 3%;" role="button" aria-pressed="true">View Student</a>
+      </div>
+
+    </div>
+
+  </body>
+</html>
