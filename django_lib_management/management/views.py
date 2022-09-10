@@ -43,7 +43,10 @@ def loginView(request):
 		else:
 		    messages.info(request, "Please register")
 		    return redirect('register')
-
+'''
+after successfull registration user can login 
+if the user is registered as admin it will redirected to hompage
+'''
 
 
 class RegisterView(generic.CreateView):
@@ -61,8 +64,11 @@ def logout(request):
 def hompageview(request):
 	if request.user.is_authenticated:
 		return render(request, 'management/homepage.html')
+"""
+After log in home page is only accessible ny admin with more functionalities
+like adding new book, updating existing book, deleting book
+"""
 
-# as admin has the only permission to adding books
 @login_required(login_url='login')
 def addbook_view(request):
     form=forms.BookForm()
@@ -72,10 +78,15 @@ def addbook_view(request):
             user=form.save()
             return render(request,'management/bookadded.html')
     return render(request,'management/addbook.html',{'form':form})
-
+"""
+This view will add books which admin creates
+"""
 
 @login_required(login_url='login')
 def listbookview(request):
+"""
+listing all the books added by admin
+"""	
 	book = Book.objects.all().count()
 
 	context = {'book':book}
